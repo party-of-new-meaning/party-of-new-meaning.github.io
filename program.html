@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Партия Нового Смысла | Программа</title>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #05140D;
+            --green: #0B3B24;
+            --orange: #F26522;
+            --white: #FFFFFF;
+            --gray: #8E9B95;
+            --font-display: 'Unbounded', sans-serif;
+            --font-text: 'Inter', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-dark); color: var(--white); font-family: var(--font-text); overflow-x: hidden; line-height: 1.5; }
+        .ambient-light { position: fixed; top: -20%; left: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(242,101,34,0.15) 0%, rgba(5,20,13,0) 70%); border-radius: 50%; z-index: -1; pointer-events: none; transition: transform 0.2s ease-out; }
+        .ambient-light-2 { position: fixed; bottom: -20%; right: -10%; width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(11,59,36,0.4) 0%, rgba(5,20,13,0) 70%); border-radius: 50%; z-index: -1; pointer-events: none; }
+        h1, h2, h3 { font-family: var(--font-display); text-transform: uppercase; line-height: 1.1; letter-spacing: -0.02em; }
+        .huge-text { font-size: clamp(3rem, 8vw, 7rem); font-weight: 900; margin-bottom: 2rem; }
+        .section-title { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; margin-bottom: 4rem; display: flex; align-items: center; gap: 20px; }
+        .section-title::before { content: ''; display: block; width: 60px; height: 4px; background-color: var(--orange); }
+        .text-orange { color: var(--orange); }
+        nav { position: fixed; top: 0; width: 100%; padding: 24px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 100; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(5, 20, 13, 0.7); }
+        .logo { font-family: var(--font-display); font-weight: 900; font-size: 20px; letter-spacing: 1px; color: var(--white); display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo span { color: var(--orange); }
+        .nav-links { display: flex; gap: 40px; }
+        .nav-links a { color: var(--gray); text-decoration: none; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--orange); }
+        .btn { padding: 20px 40px; font-family: var(--font-text); font-weight: 600; font-size: 16px; text-transform: uppercase; text-decoration: none; letter-spacing: 1px; border: none; position: relative; overflow: hidden; transition: all 0.4s ease; display: inline-block; }
+        .btn-primary { background-color: var(--orange); color: var(--white); clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%); }
+        .btn-primary:hover { background-color: var(--white); color: var(--bg-dark); padding-right: 50px; }
+        .program-hero { padding: 200px 5% 100px; position: relative; }
+        .program-hero p { font-size: 1.5rem; color: var(--gray); max-width: 800px; font-weight: 300; margin-top: 2rem; border-left: 4px solid var(--orange); padding-left: 24px; }
+        .program-list { padding: 50px 5% 100px; display: flex; flex-direction: column; gap: 24px; }
+        .program-item { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 48px 40px; border-radius: 24px; transition: all 0.4s ease; position: relative; overflow: hidden; display: flex; gap: 40px; align-items: flex-start; }
+        .program-item:hover { background: rgba(11, 59, 36, 0.3); border-color: rgba(242, 101, 34, 0.5); transform: translateX(10px); }
+        .program-number { font-family: var(--font-display); font-size: 4rem; font-weight: 900; color: rgba(242, 101, 34, 0.3); line-height: 1; min-width: 100px; }
+        .program-content h3 { font-size: 2rem; margin-bottom: 16px; color: var(--white); }
+        .program-content p { color: var(--gray); font-size: 1.1rem; max-width: 800px; }
+        .program-content ul { list-style: none; margin-top: 20px; }
+        .program-content ul li { color: var(--gray); font-size: 1.1rem; padding-left: 20px; position: relative; margin-bottom: 8px; }
+        .program-content ul li::before { content: '→'; position: absolute; left: 0; color: var(--orange); }
+        .cta { padding: 150px 5%; text-align: center; background: linear-gradient(180deg, var(--bg-dark) 0%, var(--green) 100%); position: relative; }
+        .cta h2 { font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: 30px; }
+        .cta p { color: var(--gray); font-size: 1.2rem; margin-bottom: 50px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .program-hero { padding: 150px 5% 60px; }
+            .program-hero p { font-size: 1.2rem; }
+            .program-item { flex-direction: column; gap: 20px; padding: 32px 24px; }
+            .program-number { font-size: 3rem; min-width: auto; }
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-light" id="light1"></div>
+    <div class="ambient-light-2"></div>
+
+    <nav>
+        <a href="index.html" class="logo">ПАРТИЯ <span>НОВОГО СМЫСЛА</span></a>
+        <div class="nav-links">
+            <a href="index.html">Главная</a>
+            <a href="about.html">Кто мы?</a>
+            <a href="program.html" class="active">Программа</a>
+            <a href="index.html#join">Вступить</a>
+        </div>
+    </nav>
+
+    <section class="program-hero">
+        <h1 class="huge-text">НАША <span class="text-orange">ПРОГРАММА</span></h1>
+        <p>Конкретные шаги, а не абстрактные обещания. Мы разработали четкий план реформ, который начнем реализовывать с первого дня после избрания.</p>
+    </section>
+
+    <section class="program-list">
+        <div class="program-item">
+            <div class="program-number">01</div>
+            <div class="program-content">
+                <h3>Экономика нового поколения</h3>
+                <p>Создание условий для устойчивого роста и привлечения инвестиций.</p>
+                <ul>
+                    <li>Цифровизация налоговой системы и отмена отчетности для малого бизнеса.</li>
+                    <li>Создание технопарков в каждом регионе с налоговыми льготами на 5 лет.</li>
+                    <li>Снижение административных барьеров для стартапов.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="program-item">
+            <div class="program-number">02</div>
+            <div class="program-content">
+                <h3>Социальная справедливость</h3>
+                <p>Забота о гражданах через прозрачные и эффективные механизмы.</p>
+                <ul>
+                    <li>Внедрение системы "одного окна" для получения всех социальных выплат.</li>
+                    <li>Программа доступного арендного жилья для молодых специалистов.</li>
+                    <li>Полная цифровизация записи к врачу и электронных медкарт.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="program-item">
+            <div class="program-number">03</div>
+            <div class="program-content">
+                <h3>Образование 4.0</h3>
+                <p>Подготовка нового поколения к вызовам цифровой эпохи.</p>
+                <ul>
+                    <li>Оснащение всех школ современным оборудованием и доступом к ИИ-платформам.</li>
+                    <li>Повышение зарплат учителей до уровня IT-специалистов.</li>
+                    <li>Введение обязательных курсов по финансовой и цифровой грамотности.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="program-item">
+            <div class="program-number">04</div>
+            <div class="program-content">
+                <h3>Безопасность и закон</h3>
+                <p>Жесткий контроль и нулевая толерантность к коррупции.</p>
+                <ul>
+                    <li>Создание независимого антикоррупционного бюро с прямым подчинением гражданам.</li>
+                    <li>Полная прозрачность государственных закупок через блокчейн.</li>
+                    <li>Реформа судебной системы для ускорения рассмотрения дел.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="program-item">
+            <div class="program-number">05</div>
+            <div class="program-content">
+                <h3>Экология и устойчивое развитие</h3>
+                <p>Сохранение природы для будущих поколений.</p>
+                <ul>
+                    <li>Переход на возобновляемые источники энергии к 2035 году.</li>
+                    <li>Строгий контроль за выбросами промышленных предприятий.</li>
+                    <li>Программа по восстановлению лесов и очистке водоемов.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>ПОДДЕРЖИ<br><span class="text-orange">НАШ КУРС</span></h2>
+        <p>Присоединяйтесь к команде профессионалов, которые меняют страну к лучшему.</p>
+        <a href="index.html#join" class="btn btn-primary" style="padding: 24px 60px; font-size: 18px;">Вступить в партию</a>
+    </section>
+
+    <script>
+        document.addEventListener('mousemove', (e) => {
+            const light = document.getElementById('light1');
+            light.style.transform = `translate(${e.clientX * 0.05}px, ${e.clientY * 0.05}px)`;
+        });
+    </script>
+</body>
+</html>

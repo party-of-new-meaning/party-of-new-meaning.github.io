@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Партия Нового Смысла | Кто мы?</title>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #05140D;
+            --green: #0B3B24;
+            --orange: #F26522;
+            --white: #FFFFFF;
+            --gray: #8E9B95;
+            --font-display: 'Unbounded', sans-serif;
+            --font-text: 'Inter', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
+        html { scroll-behavior: smooth; }
+        body { background-color: var(--bg-dark); color: var(--white); font-family: var(--font-text); overflow-x: hidden; line-height: 1.5; }
+        .ambient-light { position: fixed; top: -20%; left: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(242,101,34,0.15) 0%, rgba(5,20,13,0) 70%); border-radius: 50%; z-index: -1; pointer-events: none; transition: transform 0.2s ease-out; }
+        .ambient-light-2 { position: fixed; bottom: -20%; right: -10%; width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(11,59,36,0.4) 0%, rgba(5,20,13,0) 70%); border-radius: 50%; z-index: -1; pointer-events: none; }
+        h1, h2, h3 { font-family: var(--font-display); text-transform: uppercase; line-height: 1.1; letter-spacing: -0.02em; }
+        .huge-text { font-size: clamp(3rem, 8vw, 7rem); font-weight: 900; margin-bottom: 2rem; }
+        .section-title { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; margin-bottom: 4rem; display: flex; align-items: center; gap: 20px; }
+        .section-title::before { content: ''; display: block; width: 60px; height: 4px; background-color: var(--orange); }
+        .text-orange { color: var(--orange); }
+        nav { position: fixed; top: 0; width: 100%; padding: 24px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 100; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(5, 20, 13, 0.7); }
+        .logo { font-family: var(--font-display); font-weight: 900; font-size: 20px; letter-spacing: 1px; color: var(--white); display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo span { color: var(--orange); }
+        .nav-links { display: flex; gap: 40px; }
+        .nav-links a { color: var(--gray); text-decoration: none; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--orange); }
+        .btn { padding: 20px 40px; font-family: var(--font-text); font-weight: 600; font-size: 16px; text-transform: uppercase; text-decoration: none; letter-spacing: 1px; border: none; position: relative; overflow: hidden; transition: all 0.4s ease; display: inline-block; }
+        .btn-primary { background-color: var(--orange); color: var(--white); clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%); }
+        .btn-primary:hover { background-color: var(--white); color: var(--bg-dark); padding-right: 50px; }
+        .about-hero { padding: 200px 5% 100px; position: relative; }
+        .about-hero p { font-size: 1.5rem; color: var(--gray); max-width: 800px; font-weight: 300; margin-top: 2rem; border-left: 4px solid var(--orange); padding-left: 24px; }
+        .values-grid { padding: 50px 5% 100px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .value-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 48px 40px; border-radius: 24px; transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .value-card:hover { background: rgba(11, 59, 36, 0.3); border-color: rgba(242, 101, 34, 0.5); transform: translateY(-5px); }
+        .value-card h3 { font-size: 1.8rem; margin-bottom: 20px; color: var(--white); }
+        .value-card p { color: var(--gray); font-size: 1.1rem; }
+        .value-icon { width: 60px; height: 60px; background: rgba(242, 101, 34, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 32px; color: var(--orange); font-family: var(--font-display); font-weight: 900; font-size: 24px; }
+        .faq-section { padding: 100px 5%; background: linear-gradient(180deg, var(--bg-dark) 0%, var(--green) 100%); }
+        .faq-container { max-width: 900px; margin: 0 auto; }
+        .faq-item { border-bottom: 1px solid rgba(255,255,255,0.1); padding: 30px 0; transition: all 0.3s ease; }
+        .faq-item:first-child { border-top: 1px solid rgba(255,255,255,0.1); }
+        .faq-question { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--white); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: color 0.3s; text-transform: uppercase; }
+        .faq-question:hover { color: var(--orange); }
+        .faq-question::after { content: '+'; font-size: 2rem; color: var(--orange); font-weight: 300; transition: transform 0.3s ease; }
+        .faq-item.active .faq-question { color: var(--orange); }
+        .faq-item.active .faq-question::after { content: '−'; transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; color: var(--gray); font-size: 1.1rem; line-height: 1.7; }
+        .faq-item.active .faq-answer { max-height: 500px; padding-top: 24px; }
+        .cta { padding: 150px 5%; text-align: center; background: var(--bg-dark); position: relative; }
+        .cta h2 { font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: 30px; }
+        .cta p { color: var(--gray); font-size: 1.2rem; margin-bottom: 50px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .about-hero { padding: 150px 5% 60px; }
+            .about-hero p { font-size: 1.2rem; }
+            .faq-question { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient-light" id="light1"></div>
+    <div class="ambient-light-2"></div>
+
+    <nav>
+        <a href="index.html" class="logo">ПАРТИЯ <span>НОВОГО СМЫСЛА</span></a>
+        <div class="nav-links">
+            <a href="index.html">Главная</a>
+            <a href="about.html" class="active">Кто мы?</a>
+            <a href="program.html">Программа</a>
+            <a href="index.html#join">Вступить</a>
+        </div>
+    </nav>
+
+    <section class="about-hero">
+        <h1 class="huge-text">КТО <span class="text-orange">МЫ?</span></h1>
+        <p>Мы — объединение граждан, экспертов и лидеров мнений, которые устали от пустых обещаний. Наша цель — не власть ради власти, а построение системы, где законы работают на человека, а будущее страны является главным приоритетом.</p>
+    </section>
+
+    <section class="values-grid">
+        <div class="value-card">
+            <div class="value-icon">01</div>
+            <h3>Прозрачность</h3>
+            <p>Каждое решение партии, каждый голос и каждый бюджетный рубль должны быть открыты для общества. Мы против двойных стандартов.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon">02</div>
+            <h3>Профессионализм</h3>
+            <p>В нашей команде — экономисты, юристы, инженеры и предприниматели. Мы принимаем решения на основе данных и экспертизы, а не популизма.</p>
+        </div>
+        <div class="value-card">
+            <div class="value-icon">03</div>
+            <h3>Ответственность</h3>
+            <p>Мы не ищем виноватых. Мы берем ответственность за результат и готовы отвечать за каждое принятое решение перед гражданами.</p>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="faq-container">
+            <h2 class="section-title">Частые вопросы</h2>
+            <div class="faq-item">
+                <div class="faq-question">Как вступить в партию?</div>
+                <div class="faq-answer"><p>Вы можете оставить заявку на главной странице сайта, заполнив простую форму. После этого с вами свяжется координатор регионального отделения для уточнения деталей и знакомства с уставом партии.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Чем вы отличаетесь от других партий?</div>
+                <div class="faq-answer"><p>Мы отказываемся от классической политической риторики. Наш фокус — конкретные законопроекты и реформы, основанные на математических моделях и международном опыте, а не на идеологических штампах.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Кто финансирует партию?</div>
+                <div class="faq-answer"><p>Партия финансируется за счет членских взносов, добровольных пожертвований граждан и прозрачных грантов. Мы принципиально не принимаем средства от олигархических структур в обмен на политические решения.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Какие у вас планы на ближайший год?</div>
+                <div class="faq-answer"><p>Наша главная цель — сформировать региональные ячейки во всех крупных городах, разработать пакет из 10 ключевых законопроектов и провести открытые общественные слушания по ним.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Могу ли я помочь, если не хочу быть членом партии?</div>
+                <div class="faq-answer"><p>Да. Мы всегда рады волонтерам, экспертам и просто неравнодушным гражданам. Вы можете участвовать в разработке программ, помогать с организацией мероприятий или распространять информацию.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>ОСТАЛИСЬ<br><span class="text-orange">ВОПРОСЫ?</span></h2>
+        <p>Напишите нам, и мы ответим на все интересующие вас вопросы в течение 24 часов.</p>
+        <a href="#" class="btn btn-primary" style="padding: 24px 60px; font-size: 18px;">Связаться с нами</a>
+    </section>
+
+    <script>
+        document.addEventListener('mousemove', (e) => {
+            const light = document.getElementById('light1');
+            light.style.transform = `translate(${e.clientX * 0.05}px, ${e.clientY * 0.05}px)`;
+        });
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(otherItem => otherItem.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
