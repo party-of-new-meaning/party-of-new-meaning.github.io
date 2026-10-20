@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Партия Нового Смысла | Программа</title>
+    <title>Партия Нового Смысла | Устав</title>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -17,51 +17,64 @@
         }
         * { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
         html { scroll-behavior: smooth; }
-        body { background-color: var(--bg-dark); color: var(--white); font-family: var(--font-text); overflow-x: hidden; line-height: 1.5; }
-        .ambient-light { position: fixed; top: -20%; left: -10%; width: 80vw; height: 80vw; background: radial-gradient(circle, rgba(242,101,34,0.15) 0%, rgba(5,20,13,0) 70%); border-radius: 50%; z-index: -1; pointer-events: none; transition: transform 0.2s ease-out; }
-        .ambient-light-2 { position: fixed; bottom: -20%; right: -10%; width: 90vw; height: 90vw; background: radial-gradient(circle, rgba(11,59,36,0.4) 0%, rgba(5,20,13,0) 70%); border-radius: 50%; z-index: -1; pointer-events: none; }
+        body { background-color: var(--bg-dark); color: var(--white); font-family: var(--font-text); overflow-x: hidden; line-height: 1.6; }
+        .ambient-light { position: fixed; top: -20%; left: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(242,101,34,0.15) 0%, rgba(5,20,13,0) 70%); border-radius: 50%; z-index: -1; pointer-events: none; transition: transform 0.2s ease-out; }
+        .ambient-light-2 { position: fixed; bottom: -20%; right: -10%; width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(11,59,36,0.4) 0%, rgba(5,20,13,0) 70%); border-radius: 50%; z-index: -1; pointer-events: none; }
         h1, h2, h3 { font-family: var(--font-display); text-transform: uppercase; line-height: 1.1; letter-spacing: -0.02em; }
-        .huge-text { font-size: clamp(2.5rem, 10vw, 7rem); font-weight: 900; margin-bottom: 2rem; }
-        .section-title { font-size: clamp(1.8rem, 6vw, 3.5rem); font-weight: 700; margin-bottom: 3rem; display: flex; align-items: center; gap: 15px; }
-        .section-title::before { content: ''; display: block; width: 40px; height: 4px; background-color: var(--orange); }
+        .huge-text { font-size: clamp(3rem, 8vw, 7rem); font-weight: 900; margin-bottom: 2rem; }
+        .section-title { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; margin-bottom: 3rem; display: flex; align-items: center; gap: 20px; }
+        .section-title::before { content: ''; display: block; width: 60px; height: 4px; background-color: var(--orange); }
         .text-orange { color: var(--orange); }
-        nav { position: fixed; top: 0; width: 100%; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(5, 20, 13, 0.8); transition: all 0.3s ease; }
-        .logo { font-family: var(--font-display); font-weight: 900; font-size: 16px; letter-spacing: 1px; color: var(--white); display: flex; align-items: center; gap: 10px; text-decoration: none; z-index: 1001; }
+
+        nav { position: fixed; top: 0; width: 100%; padding: 24px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 100; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(5, 20, 13, 0.7); }
+        .logo { font-family: var(--font-display); font-weight: 900; font-size: 20px; letter-spacing: 1px; color: var(--white); display: flex; align-items: center; gap: 10px; text-decoration: none; }
         .logo span { color: var(--orange); }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a { color: var(--gray); text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        .nav-links { display: flex; gap: 40px; }
+        .nav-links a { color: var(--gray); text-decoration: none; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
         .nav-links a:hover, .nav-links a.active { color: var(--orange); }
-        .burger { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 1001; }
-        .burger span { display: block; width: 28px; height: 2px; background: var(--white); transition: all 0.3s ease; }
-        .mobile-menu { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: var(--bg-dark); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 30px; z-index: 999; transform: translateY(-100%); transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1); }
-        .mobile-menu.active { transform: translateY(0); }
-        .mobile-menu a { font-family: var(--font-display); font-size: 1.8rem; color: var(--white); text-decoration: none; text-transform: uppercase; font-weight: 700; transition: color 0.3s; }
-        .mobile-menu a:hover { color: var(--orange); }
-        .btn { padding: 18px 32px; font-family: var(--font-text); font-weight: 600; font-size: 14px; text-transform: uppercase; text-decoration: none; letter-spacing: 1px; border: none; position: relative; overflow: hidden; transition: all 0.4s ease; display: inline-block; text-align: center; }
+
+        .btn { padding: 18px 36px; font-family: var(--font-text); font-weight: 600; font-size: 15px; text-transform: uppercase; text-decoration: none; letter-spacing: 1px; border: none; transition: all 0.4s ease; display: inline-block; }
         .btn-primary { background-color: var(--orange); color: var(--white); clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%); }
-        .btn-primary:hover { background-color: var(--white); color: var(--bg-dark); padding-right: 40px; }
-        .program-hero { padding: 140px 5% 60px; position: relative; }
-        .program-hero p { font-size: 1.1rem; color: var(--gray); max-width: 800px; font-weight: 300; margin-top: 1.5rem; border-left: 4px solid var(--orange); padding-left: 20px; }
-        .program-list { padding: 40px 5% 80px; display: flex; flex-direction: column; gap: 20px; }
-        .program-item { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 32px 24px; border-radius: 20px; transition: all 0.4s ease; position: relative; overflow: hidden; display: flex; gap: 24px; align-items: flex-start; }
-        .program-item:hover { background: rgba(11, 59, 36, 0.3); border-color: rgba(242, 101, 34, 0.5); transform: translateX(5px); }
-        .program-number { font-family: var(--font-display); font-size: 3rem; font-weight: 900; color: rgba(242, 101, 34, 0.3); line-height: 1; min-width: 70px; }
-        .program-content h3 { font-size: 1.5rem; margin-bottom: 12px; color: var(--white); }
-        .program-content p { color: var(--gray); font-size: 0.95rem; max-width: 800px; }
-        .program-content ul { list-style: none; margin-top: 15px; }
-        .program-content ul li { color: var(--gray); font-size: 0.95rem; padding-left: 20px; position: relative; margin-bottom: 8px; }
-        .program-content ul li::before { content: '→'; position: absolute; left: 0; color: var(--orange); }
-        .cta { padding: 100px 5%; text-align: center; background: linear-gradient(180deg, var(--bg-dark) 0%, var(--green) 100%); position: relative; }
-        .cta h2 { font-size: clamp(2rem, 8vw, 5rem); margin-bottom: 20px; }
-        .cta p { color: var(--gray); font-size: 1rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .cta .btn { width: 100%; max-width: 350px; padding: 20px 40px; font-size: 16px; }
+        .btn-primary:hover { background-color: var(--white); color: var(--bg-dark); }
+        .btn-outline { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.2); }
+        .btn-outline:hover { border-color: var(--orange); color: var(--orange); }
+
+        .charter-hero { padding: 200px 5% 80px; }
+        .charter-hero p { font-size: 1.4rem; color: var(--gray); max-width: 850px; font-weight: 300; margin-top: 2rem; border-left: 4px solid var(--orange); padding-left: 24px; }
+        .meta-line { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+        .meta-badge { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--gray); border: 1px solid rgba(255,255,255,0.12); padding: 10px 14px; border-radius: 999px; background: rgba(255,255,255,0.02); }
+        .meta-badge strong { color: var(--orange); font-weight: 600; }
+
+        .notice { margin: 0 5% 60px; padding: 24px 28px; border: 1px solid rgba(242,101,34,0.35); background: rgba(242,101,34,0.06); border-radius: 16px; font-size: 1rem; color: var(--gray); }
+        .notice strong { color: var(--white); }
+
+        .charter-body { padding: 0 5% 100px; max-width: 1100px; margin: 0 auto; }
+        .chapter { border: 1px solid rgba(255,255,255,0.07); border-radius: 18px; margin-bottom: 14px; background: rgba(255,255,255,0.02); overflow: hidden; transition: border-color 0.3s; }
+        .chapter.open { border-color: rgba(242,101,34,0.4); }
+        .chapter-head { padding: 26px 28px; display: flex; justify-content: space-between; align-items: center; gap: 20px; cursor: pointer; }
+        .chapter-head h3 { font-size: 1.15rem; letter-spacing: 0; }
+        .chapter-head .num { color: var(--orange); font-family: var(--font-display); font-weight: 900; margin-right: 12px; }
+        .chapter-head .chev { color: var(--orange); font-size: 1.6rem; transition: transform 0.3s; line-height: 1; }
+        .chapter.open .chev { transform: rotate(45deg); }
+        .chapter-body { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+        .chapter-inner { padding: 0 28px 28px; color: var(--gray); font-size: 1rem; }
+        .chapter-inner p { margin-bottom: 12px; }
+        .chapter-inner ul { margin: 8px 0 12px 18px; }
+        .chapter-inner li { margin-bottom: 6px; }
+        .chapter-inner strong { color: var(--white); }
+
+        .download-box { margin: 60px 5% 0; padding: 40px; border-radius: 24px; border: 1px solid rgba(255,255,255,0.08); background: linear-gradient(135deg, rgba(11,59,36,0.5), rgba(5,20,13,0.2)); display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: center; }
+        .download-box h3 { font-size: 1.5rem; margin-bottom: 8px; }
+        .download-box p { color: var(--gray); max-width: 520px; }
+
+        .cta { padding: 120px 5%; text-align: center; }
+        .cta h2 { font-size: clamp(2rem, 5vw, 4rem); margin-bottom: 30px; }
+
         @media (max-width: 900px) {
             .nav-links { display: none; }
-            .burger { display: flex; }
-            .program-hero { padding: 120px 5% 40px; }
-            .program-hero p { font-size: 1rem; padding-left: 15px; }
-            .program-item { flex-direction: column; gap: 15px; padding: 24px 20px; }
-            .program-number { font-size: 2.5rem; min-width: auto; }
+            .charter-hero { padding: 150px 5% 60px; }
+            .charter-hero p { font-size: 1.1rem; }
+            .download-box { flex-direction: column; align-items: flex-start; }
         }
     </style>
 </head>
@@ -74,93 +87,134 @@
         <div class="nav-links">
             <a href="index.html">Главная</a>
             <a href="about.html">Кто мы?</a>
-            <a href="program.html" class="active">Программа</a>
+            <a href="program.html">Программа</a>
+            <a href="charter.html" class="active">Устав</a>
             <a href="index.html#join">Вступить</a>
-        </div>
-        <div class="burger" id="burger">
-            <span></span><span></span><span></span>
         </div>
     </nav>
 
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html">Главная</a>
-        <a href="about.html">Кто мы?</a>
-        <a href="program.html">Программа</a>
-        <a href="index.html#join">Вступить</a>
-    </div>
-
-    <section class="program-hero">
-        <h1 class="huge-text">НАША <span class="text-orange">ПРОГРАММА</span></h1>
-        <p>Конкретные шаги, а не абстрактные обещания. Мы разработали четкий план реформ, который начнем реализовывать с первого дня после избрания.</p>
+    <section class="charter-hero">
+        <h1 class="huge-text">УСТАВ <span class="text-orange">ФРАКЦИИ</span></h1>
+        <p>Регламент деятельности фракции «Партия Нового Смысла» в парламенте Молодёжного Движения «Новые». Документ определяет цели, права и обязанности членов, структуру органов и порядок принятия решений.</p>
+        <div class="meta-line">
+            <div class="meta-badge">Принят <strong>17 октября 2026</strong></div>
+            <div class="meta-badge">Учредительное собрание</div>
+            <div class="meta-badge">Председатель: <strong>Богачев М.А.</strong></div>
+        </div>
     </section>
 
-    <section class="program-list">
-        <div class="program-item">
-            <div class="program-number">01</div>
-            <div class="program-content">
-                <h3>Экономика нового поколения</h3>
-                <p>Создание условий для устойчивого роста и привлечения инвестиций.</p>
-                <ul>
-                    <li>Цифровизация налоговой системы и отмена отчетности для малого бизнеса.</li>
-                    <li>Создание технопарков в каждом регионе с налоговыми льготами на 5 лет.</li>
-                    <li>Снижение административных барьеров для стартапов.</li>
-                </ul>
-            </div>
+    <div class="notice">
+        <strong>Важно:</strong> фракция не является юридическим лицом, политической партией или общественным объединением, не выступает от имени партии «НОВЫЕ ЛЮДИ» и не выдвигает кандидатов на выборах органов государственной власти и местного самоуправления. Деятельность ведётся в рамках Молодёжного Движения «Новые».
+    </div>
+
+    <section class="charter-body">
+        <h2 class="section-title">Структура документа</h2>
+
+        <div class="chapter">
+            <div class="chapter-head"><h3><span class="num">01</span>Общие положения</h3><span class="chev">+</span></div>
+            <div class="chapter-body"><div class="chapter-inner">
+                <p>Фракция — внутреннее добровольное объединение членов Движения, созданное для участия в политической жизни, формирования и выражения позиции, работы в парламенте Движения и развития политической культуры молодёжи.</p>
+                <p>Фракция действует в рамках регионального отделения Движения в Московской области, не является юридическим лицом и не имеет собственного имущества и банковских счетов.</p>
+                <p><strong>Наименования:</strong> полное — Фракция «ПАРТИЯ НОВОГО СМЫСЛА» в парламенте Молодёжного Движения «Новые»; краткое — Фракция «ПАРТИЯ НОВОГО СМЫСЛА»; сокращённое — ПНС.</p>
+                <p><strong>Девиз:</strong> «Сильные законы — для людей и будущего». Основные цвета — оранжевый, зелёный и тёмно-зелёный.</p>
+            </div></div>
         </div>
-        <div class="program-item">
-            <div class="program-number">02</div>
-            <div class="program-content">
-                <h3>Социальная справедливость</h3>
-                <p>Забота о гражданах через прозрачные и эффективные механизмы.</p>
+
+        <div class="chapter">
+            <div class="chapter-head"><h3><span class="num">02</span>Цели и задачи</h3><span class="chev">+</span></div>
+            <div class="chapter-body"><div class="chapter-inner">
                 <ul>
-                    <li>Внедрение системы "одного окна" для получения всех социальных выплат.</li>
-                    <li>Программа доступного арендного жилья для молодых специалистов.</li>
-                    <li>Полная цифровизация записи к врачу и электронных медкарт.</li>
+                    <li>Участие членов Движения в политической жизни и выражение их позиции.</li>
+                    <li>Разработка и продвижение обоснованных законодательных инициатив.</li>
+                    <li>Представление интересов членов фракции в парламенте Движения.</li>
+                    <li>Политическое образование и развитие навыков публичной политики, права и аналитики.</li>
+                    <li>Популяризация ценностей Движения и вовлечение молодёжи в гражданскую активность.</li>
                 </ul>
-            </div>
+            </div></div>
         </div>
-        <div class="program-item">
-            <div class="program-number">03</div>
-            <div class="program-content">
-                <h3>Образование 4.0</h3>
-                <p>Подготовка нового поколения к вызовам цифровой эпохи.</p>
-                <ul>
-                    <li>Оснащение всех школ современным оборудованием и доступом к ИИ-платформам.</li>
-                    <li>Повышение зарплат учителей до уровня IT-специалистов.</li>
-                    <li>Введение обязательных курсов по финансовой и цифровой грамотности.</li>
-                </ul>
-            </div>
+
+        <div class="chapter">
+            <div class="chapter-head"><h3><span class="num">03</span>Права и обязанности фракции</h3><span class="chev">+</span></div>
+            <div class="chapter-body"><div class="chapter-inner">
+                <p><strong>Права:</strong> распространять информацию о деятельности, участвовать в выработке решений парламента Движения, вносить законопроекты и поправки, создавать комитеты и рабочие группы, вступать в союзы и коалиции без образования юридического лица.</p>
+                <p><strong>Обязанности:</strong> соблюдать Конституцию РФ, законодательство, Устав партии «НОВЫЕ ЛЮДИ», Регламент и акты Движения; извещать руководство Движения о мероприятиях; представлять отчёты; не допускать разжигания ненависти, дискриминации и призывов к насилию; обеспечивать защиту персональных данных.</p>
+            </div></div>
         </div>
-        <div class="program-item">
-            <div class="program-number">04</div>
-            <div class="program-content">
-                <h3>Безопасность и закон</h3>
-                <p>Жесткий контроль и нулевая толерантность к коррупции.</p>
-                <ul>
-                    <li>Создание независимого антикоррупционного бюро с прямым подчинением гражданам.</li>
-                    <li>Полная прозрачность государственных закупок через блокчейн.</li>
-                    <li>Реформа судебной системы для ускорения рассмотрения дел.</li>
-                </ul>
-            </div>
+
+        <div class="chapter">
+            <div class="chapter-head"><h3><span class="num">04</span>Членство. Права и свободы членов</h3><span class="chev">+</span></div>
+            <div class="chapter-body"><div class="chapter-inner">
+                <p>Членами могут быть члены Движения от 14 до 21 года на момент принятия устава, разделяющие цели фракции и соблюдающие устав. Членство добровольное и индивидуальное, не ограничивается по признакам профессии, расы, национальности, религии, пола, происхождения, имущественного положения и убеждений.</p>
+                <p><strong>Член фракции вправе:</strong> избирать и быть избранным в органы фракции, свободно выражать мнение, вносить предложения (поддержанные четырьмя членами — обязательны к рассмотрению), получать информацию о деятельности, обращаться с заявлениями и получать мотивированный ответ в срок не более 14 дней, обжаловать решения, на защиту чести и достоинства, на защиту персональных данных.</p>
+                <p><strong>Член фракции обязан:</strong> соблюдать законодательство и устав, участвовать в деятельности, уважать мнение других, не разглашать конфиденциальную информацию, излагать сведения достоверно, участвовать в общих собраниях.</p>
+            </div></div>
         </div>
-        <div class="program-item">
-            <div class="program-number">05</div>
-            <div class="program-content">
-                <h3>Экология и устойчивое развитие</h3>
-                <p>Сохранение природы для будущих поколений.</p>
+
+        <div class="chapter">
+            <div class="chapter-head"><h3><span class="num">05</span>Руководящие органы</h3><span class="chev">+</span></div>
+            <div class="chapter-body"><div class="chapter-inner">
+                <p><strong>Общее собрание</strong> — высший руководящий орган. Созывается не реже раза в три месяца, правомочно при участии более половины членов. К исключительной компетенции относятся: утверждение устава, избрание Председателя, принятие программы, реорганизация и прекращение деятельности.</p>
+                <p><strong>Совет фракции</strong> — постоянно действующий коллегиальный орган. Входят Председатель, заместители и председатели комитетов. Заседания — не реже раза в месяц, решения — большинством голосов.</p>
+                <p><strong>Председатель фракции</strong> — высшее выборное должностное лицо. Избирается тайным голосованием. Представляет фракцию, руководит Советом, назначает заместителей и председателей комитетов, подписывает решения.</p>
+            </div></div>
+        </div>
+
+        <div class="chapter">
+            <div class="chapter-head"><h3><span class="num">06</span>Комитеты</h3><span class="chev">+</span></div>
+            <div class="chapter-body"><div class="chapter-inner">
+                <p>Постоянно действующие рабочие органы:</p>
                 <ul>
-                    <li>Переход на возобновляемые источники энергии к 2035 году.</li>
-                    <li>Строгий контроль за выбросами промышленных предприятий.</li>
-                    <li>Программа по восстановлению лесов и очистке водоемов.</li>
+                    <li>Комитет по медиа-отделу;</li>
+                    <li>Комитет по исполнению обязанностей;</li>
+                    <li>Комитет по координации;</li>
+                    <li>Комитет по политике и экономике;</li>
+                    <li>Комитет по организации мероприятий.</li>
                 </ul>
+                <p>Комитеты работают по ежемесячным планам, отчитываются перед Советом и действуют под общим контролем Председателя и Совета.</p>
+            </div></div>
+        </div>
+
+        <div class="chapter">
+            <div class="chapter-head"><h3><span class="num">07</span>Порядок принятия решений</h3><span class="chev">+</span></div>
+            <div class="chapter-body"><div class="chapter-inner">
+                <p>Заседания проводятся очно или дистанционно с верификацией участника. Кворум — более половины членов органа. Решения принимаются большинством голосов, если уставом не предусмотрено иное. По вопросам изменения устава, реорганизации и досрочного прекращения полномочий Председателя — не менее двух третей голосов.</p>
+            </div></div>
+        </div>
+
+        <div class="chapter">
+            <div class="chapter-head"><h3><span class="num">08</span>Участие в парламенте и выборах Движения</h3><span class="chev">+</span></div>
+            <div class="chapter-body"><div class="chapter-inner">
+                <p>Фракция вправе участвовать в выборах в парламент Движения в порядке, установленном руководством Движения. Кандидаты выдвигаются Советом и утверждаются Общим собранием. Члены фракции, избранные депутатами парламента Движения, образуют депутатское объединение фракции.</p>
+            </div></div>
+        </div>
+
+        <div class="chapter">
+            <div class="chapter-head"><h3><span class="num">09</span>Средства, отчётность и персональные данные</h3><span class="chev">+</span></div>
+            <div class="chapter-body"><div class="chapter-inner">
+                <p>Фракция не имеет собственных средств и имущества. Расходы осуществляются через региональное отделение Движения. Фракция ежемесячно публикует отчёт о деятельности. Обработка персональных данных — только с согласия субъекта и в соответствии с законодательством.</p>
+            </div></div>
+        </div>
+
+        <div class="chapter">
+            <div class="chapter-head"><h3><span class="num">10</span>Конфликты, изменения устава, реорганизация</h3><span class="chev">+</span></div>
+            <div class="chapter-body"><div class="chapter-inner">
+                <p>Внутренние конфликты разрешает Комитет по исполнению обязанностей, при невозможности — Председатель, далее — руководство Движения. Изменения в устав вправе предложить любой член фракции; принимаются Общим собранием и вступают в силу после согласования с руководством Движения.</p>
+            </div></div>
+        </div>
+
+        <div class="download-box">
+            <div>
+                <h3>Полный текст устава</h3>
+                <p>Скачайте официальную редакцию документа в формате .docx со всеми статьями и приложениями.</p>
             </div>
+            <a href="Устав_Фракции_Партия_Нового_Смысла.docx" class="btn btn-primary" download>Скачать устав</a>
         </div>
     </section>
 
     <section class="cta">
-        <h2>ПОДДЕРЖИ<br><span class="text-orange">НАШ КУРС</span></h2>
-        <p>Присоединяйтесь к команде профессионалов, которые меняют страну к лучшему.</p>
-        <a href="index.html#join" class="btn btn-primary">Вступить в партию</a>
+        <h2>ОСТАЛИСЬ <span class="text-orange">ВОПРОСЫ?</span></h2>
+        <p>Напишите нам — ответим в течение 24 часов.</p>
+        <a href="index.html#join" class="btn btn-outline">Связаться</a>
     </section>
 
     <script>
@@ -168,20 +222,18 @@
             const light = document.getElementById('light1');
             light.style.transform = `translate(${e.clientX * 0.05}px, ${e.clientY * 0.05}px)`;
         });
-
-        const burger = document.getElementById('burger');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        burger.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-            burger.classList.toggle('open');
-            if (mobileMenu.classList.contains('active')) { document.body.style.overflow = 'hidden'; } else { document.body.style.overflow = 'auto'; }
-        });
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                burger.classList.remove('open');
-                document.body.style.overflow = 'auto';
+        document.querySelectorAll('.chapter-head').forEach(head => {
+            head.addEventListener('click', () => {
+                const chapter = head.parentElement;
+                const body = chapter.querySelector('.chapter-body');
+                const isOpen = chapter.classList.contains('open');
+                if (isOpen) {
+                    body.style.maxHeight = null;
+                    chapter.classList.remove('open');
+                } else {
+                    chapter.classList.add('open');
+                    body.style.maxHeight = body.scrollHeight + 'px';
+                }
             });
         });
     </script>
