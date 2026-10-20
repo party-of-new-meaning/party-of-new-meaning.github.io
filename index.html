@@ -89,11 +89,24 @@
         .section-title::before { content: ''; display: block; width: 60px; height: 4px; background-color: var(--orange); }
         .text-orange { color: var(--orange); }
 
-        nav { position: fixed; top: 0; width: 100%; padding: 24px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 100; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(5, 20, 13, 0.7); }
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 24px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            background: rgba(5, 20, 13, 0.7);
+        }
         .logo { font-family: var(--font-display); font-weight: 900; font-size: 20px; letter-spacing: 1px; color: var(--white); display: flex; align-items: center; gap: 10px; text-decoration: none; }
         .logo span { color: var(--orange); }
-        .nav-links { display: flex; gap: 40px; }
-        .nav-links a { color: var(--gray); text-decoration: none; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        .nav-links { display: flex; gap: 40px; position: relative; z-index: 1001; }
+        .nav-links a { color: var(--gray); text-decoration: none; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; position: relative; z-index: 1002; pointer-events: auto; }
         .nav-links a:hover, .nav-links a.active { color: var(--orange); }
 
         .btn { padding: 20px 40px; font-family: var(--font-text); font-weight: 600; font-size: 16px; text-transform: uppercase; text-decoration: none; letter-spacing: 1px; border: none; position: relative; overflow: hidden; transition: all 0.4s ease; display: inline-block; }
@@ -129,6 +142,9 @@
         .cta { padding: 150px 5%; text-align: center; background: linear-gradient(180deg, var(--bg-dark) 0%, var(--green) 100%); position: relative; }
         .cta h2 { font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: 30px; }
         .cta p { color: var(--gray); font-size: 1.2rem; margin-bottom: 50px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
 
         @media (max-width: 900px) {
             .nav-links { display: none; }
@@ -179,22 +195,22 @@
     <section class="program" id="program">
         <h2 class="section-title">Ключевые векторы</h2>
         <div class="bento-grid">
-            <a href="program.html" class="bento-item item-1">
+            <a href="program.html" class="bento-item item-1 reveal">
                 <h3>Экономика нового поколения</h3>
                 <p>Снятие барьеров для бизнеса, цифровизация налоговой системы и поддержка технологических стартапов внутри страны.</p>
                 <div class="bento-number">01</div>
             </a>
-            <a href="program.html" class="bento-item item-2">
+            <a href="program.html" class="bento-item item-2 reveal">
                 <h3>Социальная справедливость</h3>
                 <p>Прозрачная медицина и доступное жилье для молодых семей.</p>
                 <div class="bento-number">02</div>
             </a>
-            <a href="program.html" class="bento-item item-3">
+            <a href="program.html" class="bento-item item-3 reveal">
                 <h3>Образование 4.0</h3>
                 <p>Полная модернизация школ и внедрение ИИ в учебный процесс.</p>
                 <div class="bento-number">03</div>
             </a>
-            <a href="program.html" class="bento-item item-4">
+            <a href="program.html" class="bento-item item-4 reveal">
                 <h3>Безопасность и закон</h3>
                 <p>Жесткий контроль за соблюдением законов. Защита прав каждого гражданина. Нулевая толерантность к коррупции на всех уровнях власти.</p>
                 <div class="bento-number">04</div>
@@ -213,6 +229,10 @@
             const light = document.getElementById('light1');
             light.style.transform = `translate(${e.clientX * 0.05}px, ${e.clientY * 0.05}px)`;
         });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
