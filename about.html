@@ -3,8 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Партия Нового Смысла | Кто мы?</title>
+    <meta name="theme-color" content="#05140D">
+    <title>Кто мы — фракция «Партия Нового Смысла» | Молодёжное Движение «Новые»</title>
+    <meta name="description" content="Фракция «Партия Нового Смысла» — объединение членов Молодёжного Движения «Новые». Наши ценности, принципы, команда и ответы на частые вопросы о вступлении, финансировании и планах.">
+    <meta name="keywords" content="Партия Нового Смысла, ПНС, кто мы, фракция, Молодёжное Движение Новые, НОВЫЕ ЛЮДИ, ценности фракции, принципы, вступление во фракцию, устав фракции, прозрачность, профессионализм, ответственность, доказательность, законность">
+    <meta name="author" content="Фракция «Партия Нового Смысла»">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="language" content="Russian">
+    <meta name="geo.region" content="RU-MOS">
+    <meta name="geo.placename" content="Московская область">
+    <link rel="canonical" href="https://pns.example/about.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="Партия Нового Смысла">
+    <meta property="og:title" content="Кто мы — фракция «Партия Нового Смысла»">
+    <meta property="og:description" content="Наши ценности и принципы. Ответы на частые вопросы о вступлении, финансировании и планах фракции.">
+    <meta property="og:url" content="https://pns.example/about.html">
+    <meta property="og:image" content="https://pns.example/og-cover.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Кто мы — фракция «Партия Нового Смысла»">
+    <meta name="twitter:description" content="Ценности, принципы и ответы на частые вопросы о фракции.">
+    <meta name="twitter:image" content="https://pns.example/og-cover.jpg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Как вступить во фракцию «Партия Нового Смысла»?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Оставьте заявку на главной странице или направьте заявление в Совет фракции через официальный чат. Заявление рассматривается в срок не более 14 дней. Членами могут быть члены Движения в возрасте от 14 до 21 года на момент принятия устава, разделяющие цели фракции и соблюдающие устав."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Чем фракция отличается от других политических команд?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Мы отказываемся от пустой риторики. Наш фокус — конкретные инициативы и предложения, основанные на проверяемых фактах, анализе и оценке последствий, а не на идеологических штампах. Позиции фракции подкрепляются источниками."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Кто финансирует фракцию?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "У фракции нет собственных средств и имущества. Расходы на мероприятия и материалы осуществляются через региональное отделение Движения в порядке, установленном Регламентом. Фракция не вправе самостоятельно собирать взносы и пожертвования."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Какие у фракции планы на ближайший год?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Сформировать региональные рабочие группы, разработать пакет ключевых инициатив и провести открытые общественные обсуждения. Все инициативы продвигаются законными и мирными способами через парламент Движения."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Можно ли помочь, не вступая во фракцию?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Да. Мы рады волонтёрам, экспертам и неравнодушным гражданам. Можно участвовать в разработке предложений, помогать с организацией мероприятий или распространять проверенную информацию."
+                }
+            }
+        ]
+    }
+    </script>
+
     <style>
         :root {
             --bg-dark: #05140D;
@@ -18,57 +95,89 @@
         * { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
         html { scroll-behavior: smooth; }
         body { background-color: var(--bg-dark); color: var(--white); font-family: var(--font-text); overflow-x: hidden; line-height: 1.5; }
-        .ambient-light { position: fixed; top: -20%; left: -10%; width: 80vw; height: 80vw; background: radial-gradient(circle, rgba(242,101,34,0.15) 0%, rgba(5,20,13,0) 70%); border-radius: 50%; z-index: -1; pointer-events: none; transition: transform 0.2s ease-out; }
-        .ambient-light-2 { position: fixed; bottom: -20%; right: -10%; width: 90vw; height: 90vw; background: radial-gradient(circle, rgba(11,59,36,0.4) 0%, rgba(5,20,13,0) 70%); border-radius: 50%; z-index: -1; pointer-events: none; }
+        a { color: inherit; }
+        img { max-width: 100%; display: block; }
+        ::selection { background: var(--orange); color: var(--white); }
+
+        .ambient-light { position: fixed; top: -20%; left: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(242,101,34,0.15) 0%, rgba(5,20,13,0) 70%); border-radius: 50%; z-index: -1; pointer-events: none; transition: transform 0.2s ease-out; }
+        .ambient-light-2 { position: fixed; bottom: -20%; right: -10%; width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(11,59,36,0.4) 0%, rgba(5,20,13,0) 70%); border-radius: 50%; z-index: -1; pointer-events: none; }
+
         h1, h2, h3 { font-family: var(--font-display); text-transform: uppercase; line-height: 1.1; letter-spacing: -0.02em; }
-        .huge-text { font-size: clamp(2.5rem, 10vw, 7rem); font-weight: 900; margin-bottom: 2rem; }
-        .section-title { font-size: clamp(1.8rem, 6vw, 3.5rem); font-weight: 700; margin-bottom: 3rem; display: flex; align-items: center; gap: 15px; }
-        .section-title::before { content: ''; display: block; width: 40px; height: 4px; background-color: var(--orange); }
+        .huge-text { font-size: clamp(3rem, 8vw, 7rem); font-weight: 900; margin-bottom: 2rem; }
+        .section-title { font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 700; margin-bottom: 4rem; display: flex; align-items: center; gap: 20px; }
+        .section-title::before { content: ''; display: block; width: 60px; height: 4px; background-color: var(--orange); }
         .text-orange { color: var(--orange); }
-        nav { position: fixed; top: 0; width: 100%; padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; z-index: 1000; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(5, 20, 13, 0.8); transition: all 0.3s ease; }
-        .logo { font-family: var(--font-display); font-weight: 900; font-size: 16px; letter-spacing: 1px; color: var(--white); display: flex; align-items: center; gap: 10px; text-decoration: none; z-index: 1001; }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 24px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            background: rgba(5, 20, 13, 0.7);
+        }
+        .logo { font-family: var(--font-display); font-weight: 900; font-size: 20px; letter-spacing: 1px; color: var(--white); display: flex; align-items: center; gap: 10px; text-decoration: none; }
         .logo span { color: var(--orange); }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a { color: var(--gray); text-decoration: none; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; }
+        .nav-links { display: flex; gap: 40px; position: relative; z-index: 1001; }
+        .nav-links a { color: var(--gray); text-decoration: none; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s; position: relative; z-index: 1002; pointer-events: auto; }
         .nav-links a:hover, .nav-links a.active { color: var(--orange); }
-        .burger { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 1001; }
-        .burger span { display: block; width: 28px; height: 2px; background: var(--white); transition: all 0.3s ease; }
-        .mobile-menu { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: var(--bg-dark); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 30px; z-index: 999; transform: translateY(-100%); transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1); }
-        .mobile-menu.active { transform: translateY(0); }
-        .mobile-menu a { font-family: var(--font-display); font-size: 1.8rem; color: var(--white); text-decoration: none; text-transform: uppercase; font-weight: 700; transition: color 0.3s; }
-        .mobile-menu a:hover { color: var(--orange); }
-        .btn { padding: 18px 32px; font-family: var(--font-text); font-weight: 600; font-size: 14px; text-transform: uppercase; text-decoration: none; letter-spacing: 1px; border: none; position: relative; overflow: hidden; transition: all 0.4s ease; display: inline-block; text-align: center; }
+
+        .btn { padding: 20px 40px; font-family: var(--font-text); font-weight: 600; font-size: 16px; text-transform: uppercase; text-decoration: none; letter-spacing: 1px; border: none; position: relative; overflow: hidden; transition: all 0.4s ease; display: inline-block; }
         .btn-primary { background-color: var(--orange); color: var(--white); clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%); }
-        .btn-primary:hover { background-color: var(--white); color: var(--bg-dark); padding-right: 40px; }
-        .about-hero { padding: 140px 5% 60px; position: relative; }
-        .about-hero p { font-size: 1.1rem; color: var(--gray); max-width: 800px; font-weight: 300; margin-top: 1.5rem; border-left: 4px solid var(--orange); padding-left: 20px; }
-        .values-grid { padding: 40px 5% 80px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .value-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 32px 24px; border-radius: 20px; transition: all 0.4s ease; position: relative; overflow: hidden; }
+        .btn-primary:hover { background-color: var(--white); color: var(--bg-dark); padding-right: 50px; }
+        .btn-outline { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.2); }
+        .btn-outline:hover { border-color: var(--orange); color: var(--orange); background: rgba(242,101,34,0.05); }
+
+        .about-hero { padding: 200px 5% 100px; position: relative; }
+        .about-hero p { font-size: 1.5rem; color: var(--gray); max-width: 800px; font-weight: 300; margin-top: 2rem; border-left: 4px solid var(--orange); padding-left: 24px; }
+        .meta-line { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+        .meta-badge { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--gray); border: 1px solid rgba(255,255,255,0.12); padding: 10px 14px; border-radius: 999px; background: rgba(255,255,255,0.02); }
+        .meta-badge strong { color: var(--orange); font-weight: 600; }
+
+        .values-grid { padding: 50px 5% 100px; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+        .value-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 48px 40px; border-radius: 24px; transition: all 0.4s ease; position: relative; overflow: hidden; }
         .value-card:hover { background: rgba(11, 59, 36, 0.3); border-color: rgba(242, 101, 34, 0.5); transform: translateY(-5px); }
-        .value-card h3 { font-size: 1.5rem; margin-bottom: 15px; color: var(--white); }
-        .value-card p { color: var(--gray); font-size: 0.95rem; }
-        .value-icon { width: 50px; height: 50px; background: rgba(242, 101, 34, 0.1); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; color: var(--orange); font-family: var(--font-display); font-weight: 900; font-size: 20px; }
-        .faq-section { padding: 80px 5%; background: linear-gradient(180deg, var(--bg-dark) 0%, var(--green) 100%); }
+        .value-card h3 { font-size: 1.8rem; margin-bottom: 20px; color: var(--white); }
+        .value-card p { color: var(--gray); font-size: 1.1rem; }
+        .value-icon { width: 60px; height: 60px; background: rgba(242, 101, 34, 0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin-bottom: 32px; color: var(--orange); font-family: var(--font-display); font-weight: 900; font-size: 24px; }
+
+        .docs-grid { padding: 0 5% 100px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .doc-card { border: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.02); border-radius: 24px; padding: 40px; transition: 0.4s; display: flex; flex-direction: column; gap: 16px; }
+        .doc-card:hover { border-color: rgba(242,101,34,0.5); background: rgba(11,59,36,0.25); transform: translateY(-4px); }
+        .doc-card h3 { font-size: 1.4rem; }
+        .doc-card p { color: var(--gray); font-size: 1rem; flex: 1; }
+        .doc-card .btn { padding: 14px 24px; font-size: 13px; text-align: center; }
+
+        .faq-section { padding: 100px 5%; background: linear-gradient(180deg, var(--bg-dark) 0%, var(--green) 100%); }
         .faq-container { max-width: 900px; margin: 0 auto; }
-        .faq-item { border-bottom: 1px solid rgba(255,255,255,0.1); padding: 24px 0; transition: all 0.3s ease; }
+        .faq-item { border-bottom: 1px solid rgba(255,255,255,0.1); padding: 30px 0; transition: all 0.3s ease; }
         .faq-item:first-child { border-top: 1px solid rgba(255,255,255,0.1); }
-        .faq-question { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--white); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: color 0.3s; text-transform: uppercase; gap: 15px; }
+        .faq-question { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--white); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: color 0.3s; text-transform: uppercase; }
         .faq-question:hover { color: var(--orange); }
-        .faq-question::after { content: '+'; font-size: 1.5rem; color: var(--orange); font-weight: 300; transition: transform 0.3s ease; flex-shrink: 0; }
+        .faq-question::after { content: '+'; font-size: 2rem; color: var(--orange); font-weight: 300; transition: transform 0.3s ease; }
         .faq-item.active .faq-question { color: var(--orange); }
         .faq-item.active .faq-question::after { content: '−'; transform: rotate(180deg); }
-        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; color: var(--gray); font-size: 0.95rem; line-height: 1.7; }
-        .faq-item.active .faq-answer { max-height: 500px; padding-top: 20px; }
-        .cta { padding: 100px 5%; text-align: center; background: var(--bg-dark); position: relative; }
-        .cta h2 { font-size: clamp(2rem, 8vw, 5rem); margin-bottom: 20px; }
-        .cta p { color: var(--gray); font-size: 1rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
-        .cta .btn { width: 100%; max-width: 350px; padding: 20px 40px; font-size: 16px; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; color: var(--gray); font-size: 1.1rem; line-height: 1.7; }
+        .faq-item.active .faq-answer { max-height: 500px; padding-top: 24px; }
+
+        .cta { padding: 150px 5%; text-align: center; background: var(--bg-dark); position: relative; }
+        .cta h2 { font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: 30px; }
+        .cta p { color: var(--gray); font-size: 1.2rem; margin-bottom: 50px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
         @media (max-width: 900px) {
             .nav-links { display: none; }
-            .burger { display: flex; }
-            .about-hero { padding: 120px 5% 40px; }
-            .about-hero p { font-size: 1rem; padding-left: 15px; }
-            .faq-question { font-size: 1rem; }
+            .about-hero { padding: 150px 5% 60px; }
+            .about-hero p { font-size: 1.2rem; }
+            .faq-question { font-size: 1.1rem; }
         }
     </style>
 </head>
@@ -82,40 +191,49 @@
             <a href="index.html">Главная</a>
             <a href="about.html" class="active">Кто мы?</a>
             <a href="program.html">Программа</a>
+            <a href="charter.html">Устав</a>
             <a href="index.html#join">Вступить</a>
-        </div>
-        <div class="burger" id="burger">
-            <span></span><span></span><span></span>
         </div>
     </nav>
 
-    <div class="mobile-menu" id="mobileMenu">
-        <a href="index.html">Главная</a>
-        <a href="about.html">Кто мы?</a>
-        <a href="program.html">Программа</a>
-        <a href="index.html#join">Вступить</a>
-    </div>
-
     <section class="about-hero">
         <h1 class="huge-text">КТО <span class="text-orange">МЫ?</span></h1>
-        <p>Мы — объединение граждан, экспертов и лидеров мнений, которые устали от пустых обещаний. Наша цель — не власть ради власти, а построение системы, где законы работают на человека, а будущее страны является главным приоритетом.</p>
+        <p>Мы — объединение членов Молодёжного Движения «Новые», экспертов и неравнодушных людей, которые устали от пустых обещаний. Наша цель — не власть ради власти, а правила, которые работают на человека, и будущее, которое мы строим вместе — законными и мирными способами.</p>
+        <div class="meta-line">
+            <div class="meta-badge">Фракция в парламенте <strong>Движения «Новые»</strong></div>
+            <div class="meta-badge">Девиз: <strong>«Сильные законы — для людей и будущего»</strong></div>
+            <div class="meta-badge">Принята <strong>17 октября 2026</strong></div>
+        </div>
     </section>
 
     <section class="values-grid">
-        <div class="value-card">
+        <div class="value-card reveal">
             <div class="value-icon">01</div>
             <h3>Прозрачность</h3>
-            <p>Каждое решение партии, каждый голос и каждый бюджетный рубль должны быть открыты для общества. Мы против двойных стандартов.</p>
+            <p>Каждое решение фракции, каждый голос и каждый бюджетный рубль должны быть открыты для общества. Мы против двойных стандартов.</p>
         </div>
-        <div class="value-card">
+        <div class="value-card reveal">
             <div class="value-icon">02</div>
             <h3>Профессионализм</h3>
             <p>В нашей команде — экономисты, юристы, инженеры и предприниматели. Мы принимаем решения на основе данных и экспертизы, а не популизма.</p>
         </div>
-        <div class="value-card">
+        <div class="value-card reveal">
             <div class="value-icon">03</div>
             <h3>Ответственность</h3>
-            <p>Мы не ищем виноватых. Мы берем ответственность за результат и готовы отвечать за каждое принятое решение перед гражданами.</p>
+            <p>Мы не ищем виноватых. Мы берём ответственность за результат и готовы отвечать за каждое принятое решение перед гражданами.</p>
+        </div>
+    </section>
+
+    <section class="docs-grid">
+        <div class="doc-card reveal">
+            <h3>Устав фракции</h3>
+            <p>Регламент деятельности, права и обязанности членов, структура органов и порядок принятия решений.</p>
+            <a href="charter.html" class="btn btn-primary">Открыть устав</a>
+        </div>
+        <div class="doc-card reveal">
+            <h3>Программа</h3>
+            <p>Ключевые направления и конкретные инициативы фракции, принятые Общим собранием.</p>
+            <a href="program.html" class="btn btn-outline">Смотреть программу</a>
         </div>
     </section>
 
@@ -123,24 +241,24 @@
         <div class="faq-container">
             <h2 class="section-title">Частые вопросы</h2>
             <div class="faq-item">
-                <div class="faq-question">Как вступить в партию?</div>
-                <div class="faq-answer"><p>Вы можете оставить заявку на главной странице сайта, заполнив простую форму. После этого с вами свяжется координатор регионального отделения для уточнения деталей и знакомства с уставом партии.</p></div>
+                <div class="faq-question">Как вступить во фракцию?</div>
+                <div class="faq-answer"><p>Оставьте заявку на главной странице или направьте заявление в Совет фракции через официальный чат. Заявление рассматривается в срок не более 14 дней. Членами могут быть члены Движения в возрасте от 14 до 21 года на момент принятия устава, разделяющие цели фракции и соблюдающие устав.</p></div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Чем вы отличаетесь от других партий?</div>
-                <div class="faq-answer"><p>Мы отказываемся от классической политической риторики. Наш фокус — конкретные законопроекты и реформы, основанные на математических моделях и международном опыте, а не на идеологических штампах.</p></div>
+                <div class="faq-question">Чем вы отличаетесь от других команд?</div>
+                <div class="faq-answer"><p>Мы отказываемся от пустой риторики. Наш фокус — конкретные инициативы и предложения, основанные на проверяемых фактах, анализе и оценке последствий, а не на идеологических штампах. Позиции фракции подкрепляются источниками.</p></div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Кто финансирует партию?</div>
-                <div class="faq-answer"><p>Партия финансируется за счет членских взносов, добровольных пожертвований граждан и прозрачных грантов. Мы принципиально не принимаем средства от олигархических структур в обмен на политические решения.</p></div>
+                <div class="faq-question">Кто финансирует фракцию?</div>
+                <div class="faq-answer"><p>У фракции нет собственных средств и имущества. Расходы на мероприятия и материалы осуществляются через региональное отделение Движения в порядке, установленном Регламентом. Фракция не вправе самостоятельно собирать взносы и пожертвования.</p></div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">Какие у вас планы на ближайший год?</div>
-                <div class="faq-answer"><p>Наша главная цель — сформировать региональные ячейки во всех крупных городах, разработать пакет из 10 ключевых законопроектов и провести открытые общественные слушания по ним.</p></div>
+                <div class="faq-answer"><p>Сформировать региональные рабочие группы, разработать пакет ключевых инициатив и провести открытые общественные обсуждения. Все инициативы продвигаются законными и мирными способами через парламент Движения.</p></div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">Могу ли я помочь, если не хочу быть членом партии?</div>
-                <div class="faq-answer"><p>Да. Мы всегда рады волонтерам, экспертам и просто неравнодушным гражданам. Вы можете участвовать в разработке программ, помогать с организацией мероприятий или распространять информацию.</p></div>
+                <div class="faq-question">Можно ли помочь, не вступая во фракцию?</div>
+                <div class="faq-answer"><p>Да. Мы рады волонтёрам, экспертам и неравнодушным гражданам. Можно участвовать в разработке предложений, помогать с организацией мероприятий или распространять проверенную информацию.</p></div>
             </div>
         </div>
     </section>
@@ -148,7 +266,7 @@
     <section class="cta">
         <h2>ОСТАЛИСЬ<br><span class="text-orange">ВОПРОСЫ?</span></h2>
         <p>Напишите нам, и мы ответим на все интересующие вас вопросы в течение 24 часов.</p>
-        <a href="#" class="btn btn-primary">Связаться с нами</a>
+        <a href="index.html#join" class="btn btn-primary" style="padding: 24px 60px; font-size: 18px;">Связаться с нами</a>
     </section>
 
     <script>
@@ -165,22 +283,10 @@
                 if (!isActive) item.classList.add('active');
             });
         });
-
-        const burger = document.getElementById('burger');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileLinks = mobileMenu.querySelectorAll('a');
-        burger.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active');
-            burger.classList.toggle('open');
-            if (mobileMenu.classList.contains('active')) { document.body.style.overflow = 'hidden'; } else { document.body.style.overflow = 'auto'; }
-        });
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-                burger.classList.remove('open');
-                document.body.style.overflow = 'auto';
-            });
-        });
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
